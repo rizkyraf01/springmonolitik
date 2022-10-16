@@ -20,7 +20,7 @@ public class izin_karyawan {
 
 //    @Column(name= "nip_izin",length = 10, nullable = false, unique = true)
 //    private String nip_izin;
-    @Column(name="nip_hadir",length = 100,nullable = false)
+    @Column(name="nip_hadir",length = 100,nullable = false,unique = true)
     private Integer nip_hadir;
 
     @Column(name="keterangan",length = 200, nullable = false)

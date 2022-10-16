@@ -28,7 +28,7 @@ public class IzinKaryawanControllers {
     @GetMapping("/add/izin")
     public String add(Model model){
         model.addAttribute("addIzin", new izin_karyawan());
-        return "addizin";
+        return "pages/forms/form-izin";
     }
 
     @PostMapping("/save/izin")
@@ -36,10 +36,10 @@ public class IzinKaryawanControllers {
         izin_karyawan izin_karyawans=izinKaryawanServices.addIzin(addHadir);
 
         if(izin_karyawans != null){
-            redirAttrs.addFlashAttribute("Success", "Register Successfully");
+            redirAttrs.addFlashAttribute("Success", "izin Successfully");
 //            System.out.println("Izin Successfully");
         } else {
-            redirAttrs.addFlashAttribute("Error", "Failed to Register please try again");
+            redirAttrs.addFlashAttribute("Error", "Failed to izin please try again");
 //            System.out.println("Failed to Izin please try again");
         }
 

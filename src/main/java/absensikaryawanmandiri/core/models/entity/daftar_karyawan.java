@@ -20,7 +20,7 @@ public class daftar_karyawan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="nip",length = 10, nullable = false)
+    @Column(name="nip",length = 10, nullable = false, unique = true)
     private Integer nip;
 
     @Column(name = "nama",length = 100, nullable = false)
@@ -44,9 +44,13 @@ public class daftar_karyawan {
     @Column(name="jabatan",length = 100, nullable = false)
     private String jabatan;
 
-//@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//@JoinColumn(name = "id_hadir")
-//private List<izin_karyawan> hadir_karyawans;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_absensi")
+    private List<absensi_karyawan> absensi_karyawans;
+
+@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+@JoinColumn(name = "id_hadir")
+private List<izin_karyawan> hadir_karyawans;
 
  ///////////////COBA NIP validation///////////
 //

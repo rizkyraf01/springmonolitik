@@ -22,7 +22,7 @@ public class absensi_karyawan {
     @Column(name="jam_masuk",length = 50, nullable = false)
     private String jam_masuk;
 
-    @Column(name="nip_absen",length = 100,nullable = false)
+    @Column(name="nip_absen",length = 100,nullable = false,unique = true)
     private Integer nip_absen;
 
     @Column(length = 100, nullable = false)

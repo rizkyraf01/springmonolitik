@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <!-- Required meta tags -->
@@ -33,7 +33,7 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="../../index.html">
+          <a class="navbar-brand brand-logo" href="/">
             <img src="../../images/DDP.png" alt="logo" width="1500px" height="1500px"/>
           </a>
         </div>
@@ -87,7 +87,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -102,7 +102,7 @@
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="/form-register-karyawan">Register Karyawan</a></li>
-                <li class="nav-item"><a class="nav-link" href="/form-izin">Izin Karyawan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/add/izin">Izin Karyawan</a></li>
               </ul>
             </div>
           </li>
@@ -142,28 +142,23 @@
                       <thead>
                         <tr>
                           <th>
-                            No
-                          </th>
-                          <th>
                             NIP
                           </th>
                           <th>
                             Nama
                           </th>
                           <th>
-                            Departement
-                          </th>
-                          <th>
-                            Jabatan
-                          </th>
-                          <th>
-                            No.Telp
-                          </th>
-                          <th>
                             Keterangan Izin
                           </th>
                         </tr>
                       </thead>
+                      <tbody>
+                      <tr th:each="izinkaryawans : ${izinkaryawan}">
+                        <td th:text="${izinkaryawans.nip_hadir}"></td>
+                        <td th:text="${izinkaryawans.nama}"></td>
+                        <td th:text="${izinkaryawans.keterangan}"></td>
+                      </tr>
+                      </tbody>
                     </table>
                   </div>
                 </div>

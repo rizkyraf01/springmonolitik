@@ -36,10 +36,10 @@ public class AbsenControllers {
         absensi_karyawan absensi_karyawans=absensiKaryawanServices.addAbsensi(addAbsensis);
 
         if(absensi_karyawans != null){
-            redirAttrs.addFlashAttribute("Success", "Register Successfully");
+            redirAttrs.addFlashAttribute("Success", "Absen Successfully");
 //            System.out.println("Absen Successfully");
         } else {
-            redirAttrs.addFlashAttribute("Error", "Failed to Register please try again");
+            redirAttrs.addFlashAttribute("Error", "Failed to absen please try again");
 //            System.out.println("Failed to Absen please try again");
         }
 
